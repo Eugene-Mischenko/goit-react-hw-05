@@ -1,0 +1,58 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  border: 0;
+}
+a {
+  padding-left: 10px;
+}
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.goBackButton:hover {
+  background-color: #0056b3;
+}
+.movieDetails {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+.poster {
+  max-width: 200px;
+  border-radius: 10px;
+}
+.movieDetails h2 {
+  margin-bottom: 10px;
+}
+.movieDetails p {
+  margin: 5px 0;
+}
+
+.additionalInfo {
+  margin-top: 30px;
+}
+
+.additionalInfo ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.additionalInfo a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.additionalInfo a:hover {
+  text-decoration: underline;
+}
