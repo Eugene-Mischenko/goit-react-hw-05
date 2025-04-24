@@ -3,14 +3,10 @@ import {
   NavLink,
   useParams,
   useLocation,
-  Route,
-  Routes,
   Outlet,
 } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Navigation from "../../components/Navigation/Navigation";
-import MovieReviews from "../../components/MovieReviews/MovieReviews";
-import MovieCast from "../../components/MovieCast/MovieCast";
 import css from "./MovieDetailsPage.module.css";
 
 function MovieDetailsPage() {
@@ -19,7 +15,7 @@ function MovieDetailsPage() {
   const [isError, setIsError] = useState(false);
 
   const location = useLocation();
-  const backLinkHref = location.state ?? "/movies";
+  const backLink = useRef(location.state?.from ?? "/movies");
 
   const defaults = {
     poster:
@@ -68,7 +64,7 @@ function MovieDetailsPage() {
   return (
     <>
       <Navigation />
-      <Link to={backLinkHref} className={css.goback}>
+      <Link to={backLink.current} className={css.goback}>
         Go back
       </Link>
       <div className={css.container}>
@@ -107,10 +103,6 @@ function MovieDetailsPage() {
         </ul>
         <Outlet />
       </div>
-      <Routes>
-        <Route path="cast" element={<MovieCast />} />
-        <Route path="reviews" element={<MovieReviews />} />
-      </Routes>
     </>
   );
 }

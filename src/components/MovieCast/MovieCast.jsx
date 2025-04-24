@@ -58,7 +58,7 @@ function MovieCast() {
               />
             </div>
             <p className={css.name}>{cast.name}</p>
-            <p>Character: {cast.character}</p>
+            <p className={css.character}>Character: {cast.character}</p>
           </li>
         ))}
       </ul>

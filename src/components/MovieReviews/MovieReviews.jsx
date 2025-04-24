@@ -48,7 +48,7 @@ function MovieReviews() {
         {reviews.map((review) => (
           <li key={review.id} className={css.reviewsListItem}>
             <p className={css.author}>Author: {review.author}</p>
-            <p>{review.content}</p>
+            <p className={css.content}>{review.content}</p>
           </li>
         ))}
       </ul>

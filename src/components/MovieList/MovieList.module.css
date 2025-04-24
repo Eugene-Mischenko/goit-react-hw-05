@@ -7,3 +7,9 @@
 .item {
   margin: 20px;
 }
+
+.link {
+  text-decoration: none;
+  color: #004000;
+  transition: color 0.3s ease;
+}

@@ -1,12 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navigation from "../../components/Navigation/Navigation";
 import MovieList from "../../components/MovieList/MovieList";
 import toast, { Toaster } from "react-hot-toast";
+import { searchMovies } from "../../api";
 import css from "./MoviesPage.module.css";
 
-function MoviesPage({ onSearch, searchedMovies }) {
-  const [query, setQuery] = useState("");
+function MoviesPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryFromUrl = searchParams.get("query") || "";
+  const [query, setQuery] = useState(queryFromUrl);
+  const [searchedMovies, setSearchedMovies] = useState([]);
   const [isSearched, setIsSearched] = useState(false);
+
+  useEffect(() => {
+    if (queryFromUrl) {
+      const fetchMovies = async () => {
+        try {
+          const results = await searchMovies(queryFromUrl);
+          setSearchedMovies(results);
+          setIsSearched(true);
+        } catch (error) {
+          console.error("Error searching movies:", error);
+          toast.error("Failed to fetch movies");
+        }
+      };
+      fetchMovies();
+    }
+  }, [queryFromUrl]);
 
   const notify = () => toast.error("This field must be completed");
 
@@ -16,10 +37,7 @@ function MoviesPage({ onSearch, searchedMovies }) {
       notify();
       return;
     }
-    if (query.trim()) {
-      onSearch(query);
-      setIsSearched(true);
-    }
+    setSearchParams({ query: query.trim() });
   };
 
   return (
