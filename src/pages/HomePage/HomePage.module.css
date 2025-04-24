@@ -1,0 +1,9 @@
+.title {
+  margin: 15px;
+  font-size: 36px;
+  color: #004000;
+  text-align: center;
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-style: italic;
+}

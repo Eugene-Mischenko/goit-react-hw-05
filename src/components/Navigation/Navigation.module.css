@@ -1,0 +1,28 @@
+.nav {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.navLink {
+  font-size: 20px;
+  padding: 24px 36px;
+  background-color: #f8f8f8;
+  text-align: center;
+  color: #004000;
+  border: 1px solid #004000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+
+  font-family: "Playwrite GB S", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.navLink.active {
+  color: #ffffff;
+  background-color: #004000;
+}
