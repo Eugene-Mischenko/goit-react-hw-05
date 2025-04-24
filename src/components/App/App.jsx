@@ -4,7 +4,7 @@ import MovieCast from "../MovieCast/MovieCast.jsx";
 const Web = lazy(() => import("../Web/Web.jsx"));
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage"));
+const MoviesPage = lazy(() => import("../../pages/MoviesPage/MoviesPage.jsx"));
 const NotFoundPage = lazy(() =>
   import("../../pages/NotFoundPage/NotFoundPage")
 );
