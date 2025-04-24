@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import css from "./MovieList.module.css";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router-dom";
 
 function MovieList({ movies }) {
   const location = useLocation();
