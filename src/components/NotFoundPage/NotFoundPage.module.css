@@ -1,0 +1,60 @@
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #1e1e1e;
+  color: #fff;
+  overflow: hidden; /* Отключаем скролл */
+}
+
+.errorTitle {
+  font-size: 96px;
+  color: #9d1231;
+  margin: 0;
+}
+
+.errorMessage {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.backHomeButton {
+  padding: 12px 24px;
+  background-color: #9d1231;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.backHomeButton:hover {
+  background-color: #9d1231;
+}
+
+.deadpoolSection {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.deadpoolImage {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+.deadpoolQuote {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
